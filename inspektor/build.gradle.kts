@@ -50,6 +50,9 @@ kotlin {
         all {
             languageSettings {
                 optIn("org.jetbrains.compose.resources.ExperimentalResourceApi")
+                optIn("kotlin.time.ExperimentalTime")
+                optIn("kotlinx.datetime.ExperimentalKotlinxDateTimeApi")
+
             }
         }
         val commonMain by getting {
@@ -69,7 +72,7 @@ kotlin {
                 implementation(libs.kotlinx.coroutines.core)
                 implementation(libs.kotlinx.serialization.json)
                 implementation(libs.kotlinx.serialization.json.io)
-                implementation(libs.kotlinx.datetime)
+                api(libs.kotlinx.datetime)
                 implementation(libs.ktor.core)
                 implementation(libs.multiplatformSettings)
                 implementation(libs.ktor.client.logging)

@@ -252,7 +252,7 @@ public val Inspektor: ClientPlugin<InspektorConfig> = createClientPlugin(
             requestHeadersSize = request.headers.build().approxByteCount(),
             requestContentType = request.contentType()?.typeAndSubType,
             requestPayloadSize = content.contentLength,
-            requestDate = Clock.System.now()
+            requestDate = kotlin.time.Clock.System.now()
         )
 
         if (level.headers) {
@@ -303,7 +303,7 @@ public val Inspektor: ClientPlugin<InspektorConfig> = createClientPlugin(
             responseContentType = response.contentType()?.typeAndSubType,
             responsePayloadSize = response.contentLength(),
             responseHeadersSize = response.headers.approxByteCount(),
-            responseDate = Clock.System.now()
+            responseDate = kotlin.time.Clock.System.now()
         )
 
         try {
